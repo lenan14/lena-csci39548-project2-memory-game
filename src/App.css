@@ -1,10 +1,76 @@
 .App {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 28px 16px;
   text-align: center;
 }
 
+.App h1 {
+  color: #44346f;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.game-stats {
+  color: #44346f;
+  font-size: 1.1rem;
+  margin: 12px 0 18px;
+}
+
+.new-game-button {
+  background-color: #5b4b8a;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+  padding: 10px 18px;
+}
+
+.new-game-button:hover {
+  background-color: #44346f;
+}
+
+.new-game-button:focus-visible {
+  outline: 3px solid #8fc9e8;
+  outline-offset: 3px;
+}
+
+.win-message {
+  animation: celebrate 500ms ease-out;
+  background-color: #e4f2ff;
+  border: 2px solid #769fce;
+  border-radius: 10px;
+  color: #344d78;
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin: 20px auto 0;
+  padding: 14px;
+}
+
 .card-grid {
-  margin-top: 35px;
+  margin: 28px auto 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 25px;
+  grid-template-columns: repeat(4, minmax(0, 100px));
+  gap: 16px;
+  justify-content: center;
+}
+
+@keyframes celebrate {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 420px) {
+  .card-grid {
+    gap: 10px;
+  }
 }
